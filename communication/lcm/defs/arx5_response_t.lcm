@@ -1,0 +1,14 @@
+package msg;
+
+struct arx5_response_t
+{
+    int32_t resp_type;
+    const int32_t TYPE_STATE = 1;
+    const int32_t TYPE_GAIN = 2;
+    const int32_t TYPE_OK = 3;
+    const int32_t TYPE_ERROR = 4;
+
+    arx5_state_t state;
+    arx5_gain_t gain;
+    string error_msg;
+}

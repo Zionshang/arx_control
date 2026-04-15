@@ -1,0 +1,20 @@
+package msg;
+
+struct arx5_command_t
+{
+    int32_t cmd_type;
+    const int32_t CMD_GET_STATE = 1;
+    const int32_t CMD_SET_EE_POSE = 2;
+    const int32_t CMD_RESET_TO_HOME = 3;
+    const int32_t CMD_SET_TO_DAMPING = 4;
+    const int32_t CMD_GET_GAIN = 5;
+    const int32_t CMD_SET_GAIN = 6;
+
+    // For SET_EE_POSE
+    double ee_pose[6];
+    double gripper_pos;
+    double preview_time;
+
+    // For SET_GAIN
+    arx5_gain_t gain;
+}

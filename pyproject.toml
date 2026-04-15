@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "arx-control"
+version = "0.1.0"
+description = "ARX5 control examples and communication scripts"
+requires-python = ">=3.8,<=3.11"
+dependencies = [
+    "arx5-interface",
+    "numpy",
+    "click",
+    "pynput",
+    "lcm",
+    "pyzmq",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["communication*"]
+exclude = ["can*", "examples*", "test*"]
+namespaces = true

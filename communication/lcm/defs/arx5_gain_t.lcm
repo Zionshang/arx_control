@@ -1,0 +1,10 @@
+package msg;
+
+struct arx5_gain_t
+{
+    int32_t num_joints;
+    double kp[num_joints];
+    double kd[num_joints];
+    double gripper_kp;
+    double gripper_kd;
+}

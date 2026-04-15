@@ -1,0 +1,16 @@
+package msg;
+
+struct arx5_joint_command_t
+{
+    int32_t cmd_type;
+    const int32_t CMD_GET_STATE = 1;
+    const int32_t CMD_SET_JOINT_CMD = 2;
+    const int32_t CMD_RESET_TO_HOME = 3;
+    const int32_t CMD_SET_TO_DAMPING = 4;
+
+    // For SET_JOINT_CMD
+    double preview_time;
+    int32_t num_joints;
+    double joint_pos[num_joints];
+    double gripper_pos;
+}

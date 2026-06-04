@@ -71,10 +71,13 @@ else
 fi
 
 # 运行 set.sh
-if [ -f "./set.sh" ]; then
-    echo "Running set.sh..."
-    ./set.sh
-else
-    echo "Error: set.sh not found!"
-    exit 1
-fi
+sudo cp arx_can.rules /etc/udev/rules.d/
+echo "Copied CAN rules to /etc/udev/rules.d/"
+
+sudo chmod +x /etc/udev/rules.d/arx_can.rules
+echo "Set execute permissions on CAN rules."
+
+sudo udevadm control --reload-rules && sudo udevadm trigger
+echo "Reloaded udev rules."
+
+echo "Finished."

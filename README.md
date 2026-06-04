@@ -1,5 +1,6 @@
 ## Install
 ```bash
+sudo apt install can-utils net-tools
 conda create -n arx_control python=3.10
 pip install -e .
 ```
